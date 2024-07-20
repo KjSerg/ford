@@ -1,0 +1,260 @@
+html {
+  font-size: 10px;
+  @media (max-width: 1200px) {
+    //font-size: 9px;
+  }
+}
+
+.not-active {
+  pointer-events: none;
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+em, i {
+  font-style: italic;
+}
+
+.container {
+  width: 100%;
+  max-width: 134rem;
+  margin: 0 auto;
+  @media (max-width: 1350px) {
+    padding: 0 1rem;
+  }
+}
+
+body {
+  background-color: #141429;
+  font-family: "Risque", serif;
+}
+
+body, html {
+  overflow: hidden;
+}
+
+.body-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+a.button, button {
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 4rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  border-radius: 2rem;
+  border-bottom-left-radius: 0;
+  border: 2px solid #C4C4C4;
+
+}
+
+.decorative-image {
+  pointer-events: none;
+  position: fixed;
+  width: 44rem;
+  height: 44rem;
+  bottom: 0;
+  left: -20rem;
+  animation: rotate 20s linear infinite;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.decorative-snow {
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  position: fixed;
+  pointer-events: none;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-position: 0px 0px;
+  animation: down 25s linear infinite;
+  span {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@-webkit-keyframes snowflakes-fall {
+  0% {
+    top: -10%
+  }
+  100% {
+    top: 100%
+  }
+}
+
+@-webkit-keyframes snowflakes-shake {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px)
+  }
+  50% {
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px)
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px)
+  }
+}
+
+@keyframes snowflakes-fall {
+  0% {
+    top: -10%
+  }
+  100% {
+    top: 100%
+  }
+}
+
+@keyframes snowflakes-shake {
+  0% {
+    transform: translateX(0px)
+  }
+  50% {
+    transform: translateX(80px)
+  }
+  100% {
+    transform: translateX(0px)
+  }
+}
+
+.snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 10s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running
+}
+
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s
+}
+
+.snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s
+}
+
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, .5s;
+  animation-delay: 6s, .5s
+}
+
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s
+}
+
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s
+}
+
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s
+}
+
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s
+}
+
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s
+}
+
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s
+}
+
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s
+}
+
+@keyframes down {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0px 100rem;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes twinkling {
+  0% {
+    opacity: 0.4;
+    fill: #fff;
+  }
+  100% {
+    opacity: 1;
+    fill: #FCF9BF;
+  }
+}
